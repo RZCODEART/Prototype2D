@@ -134,3 +134,39 @@ Desde el punto de vista técnico, la zona está configurada mediante dos compone
 Lógica de Colisión: Se implementó un Box Collider 2D configurado para detectar el contacto directo con el player. Al activarse, este dispara una función de derrota inmediata, forzando al jugador a respetar los límites del entorno. Iluminación Atmosférica: El área está jerarquizada visualmente mediante una Spotlight 2D. Este foco de luz no solo sirve como advertencia visual de peligro, sino que también aporta el dramatismo necesario para marcar el final de este tramo. 
 
 Aunque en esta etapa del proyecto el lago funciona como un límite infranqueable, su estructura modular permitiría, en futuras iteraciones, evolucionar hacia mecánicas más complejas de nado o gestión de oxígeno bajo el agua.
+
+## Diseño y Rigging del Protagonista
+
+El diseño del protagonista refuerza el concepto de supervivencia precaria. Visualmente, se define por una escafandra improvisada y una capucha, elementos que funcionan como significantes de la escasez de recursos y la hostilidad del entorno.
+
+![alt text](Imagenes/Personaje.png)
+
+Para su creación, seguimos un flujo de trabajo profesional: iniciamos con una fase de concept art analógico (bocetos a mano) para luego proceder al modelado 3D en Blender. Una vez consolidada la malla, se implementó un sistema de Rigging avanzado. Lo más destacado de este apartado es la independencia estructural del equipamiento:
+
+![alt text](Imagenes/Personaje_Blender.png)
+
+Esqueleto Principal: Dota al personaje de una movilidad fluida para las acciones de plataformas.
+
+Rigging de la Mochila: Al integrar huesos independientes en la mochila, hemos logrado una animación secundaria que responde de forma autónoma. Esta decisión técnica nos permite añadir una capa extra de gestualidad y física, haciendo que el peso del equipo reaccione al movimiento del cuerpo.
+
+Este enfoque de "animación desacoplada" no solo enriquece la fidelidad visual, sino que transmite de manera orgánica la carga física y el esfuerzo que el personaje debe realizar para desplazarse por la caverna.
+
+## Sistema de Animación
+
+![alt text](<Imagenes/Sistema de animacion.png>)
+
+Para dotar al personaje de una respuesta orgánica, implementamos una Máquina de Estados de Animación compleja que responde dinámicamente al contexto del gameplay. Un ejemplo clave es el sistema de salto, el cual hemos desglosado en un ciclo de cuatro fases para garantizar la fluidez física: Jump Start (anticipación), In-Air Loop (vuelo), Landing (aterrizaje) y una variante específica de Free Fall para caídas libres sin impulso previo.
+
+![alt text](Imagenes/AnimacionIdle.gif)
+
+![alt text](<Imagenes/Animacion Muerte.gif>)
+
+En cuanto a la mecánica de recarga, diseñamos un set de animaciones específico para las zonas de oxígeno. La postura de absorción es un guiño estético a la Genki-dama de Dragon Ball, funcionando como un momento de vulnerabilidad y poder. Para evitar cortes abruptos en el flujo de juego, desarrollamos transiciones suavizadas (Blends) con dos condiciones de salida:
+
+![alt text](<Imagenes/Animacion Oxigeno.png>)
+
+Salida Estática: Al alcanzar el 100% de la carga, el personaje realiza un blend hacia su postura de Idle base.
+
+Salida Dinámica: Si el jugador interrumpe la carga para moverse, el sistema ejecuta una transición directa hacia la animación de locución, manteniendo el ritmo de la partida.
+
+Finalmente, incorporamos un estado de Climbing (Escalada) con detección de colisiones verticales, permitiendo al protagonista interactuar con las escaleras del nivel de forma precisa y funcional. Este ecosistema de animaciones asegura que el control del personaje se sienta responsivo y visualmente pulido.
