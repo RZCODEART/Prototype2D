@@ -61,3 +61,15 @@ En el apartado estético, la obra implementa una técnica de renderizado híbrid
 ![alt text](Imagenes/Rocks_2.png)
 
 ![alt text](Imagenes/estalactitas.png)
+
+### Pipeline de Producción: Modelado Volumétrico - Pixel Art
+
+En cuanto al stack tecnológico, el flujo de trabajo se centró en la integración de Blender 4.5 para el modelado y Substance 3D para la creación de texturas procedimentales. El proceso comenzó con el esculpido de un set de rocas base, las cuales fueron combinadas e instanciadas para generar los diversos bloques geológicos que conforman el entorno de la caverna.
+
+Para lograr el acabado final, aprovechamos el potencial del compositor en el editor de nodos de Blender. Mediante este flujo de post-procesamiento, implementamos dos efectos críticos:
+
+#### Detección de bordes (Outline): Un trazado de contornos que define la silueta de los objetos, técnica que aplicaremos de forma sistémica en otros elementos del proyecto.
+
+#### Pixelado por Render: Un filtro de posterización y reducción de resolución que transforma la geometría 3D en el estilo pixelado característico que define nuestra identidad artística.
+
+Este método nos permite mantener la flexibilidad del diseño 3D permitiendonos el control total sobre las luces y sombras mientras elaboramos una estética retro-moderna de alta fidelidad.
