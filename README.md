@@ -121,3 +121,18 @@ Lógica de Trigger: Un objeto vacío con un Box Collider 2D configurado como dis
 ![alt text](<Imagenes/ZonaOxygeno (4).png>)
 
 Inmersión Acústica: Un sistema de audio posicional que gestiona el sonido ambiental del exterior. Hemos implementado un control de Fade-in/Fade-out automatizado, que suaviza la transición sonora cuando el jugador entra o sale del radio de escucha, garantizando una transición orgánica entre el silencio del encierro y el eco de la vida en la superficie.
+
+## Mecánicas de Hazard en el Sector del Lago
+Para concluir la arquitectura de esta primera etapa, hemos diseñado el sector del lago, el cual funciona como el cierre estructural y narrativo del nivel. En términos de gameplay, esta zona actúa como un Hazard de muerte instantánea, delimitando el final del área explorable y elevando el riesgo de la navegación.
+
+![alt text](<Imagenes/Lago_ (1).png>)
+
+![alt text](<Imagenes/Lago_ (2).png>)
+
+Desde el punto de vista técnico, la zona está configurada mediante dos componentes clave:
+
+Lógica de Colisión (Death Trigger): Se implementó un Box Collider 2D configurado para detectar el contacto directo con el player. Al activarse, este dispara una función de derrota inmediata, forzando al jugador a respetar los límites del entorno.
+
+Iluminación Atmosférica: El área está jerarquizada visualmente mediante una Spotlight 2D. Este foco de luz no solo sirve como advertencia visual de peligro, sino que también aporta el dramatismo necesario para marcar el final de este tramo.
+
+Aunque en esta etapa del proyecto el lago funciona como un límite infranqueable, su estructura modular permitiría, en futuras iteraciones, evolucionar hacia mecánicas más complejas de nado o gestión de oxígeno bajo el agua.
