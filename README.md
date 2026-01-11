@@ -155,18 +155,29 @@ Este enfoque de "animación desacoplada" no solo enriquece la fidelidad visual, 
 
 ![alt text](<Imagenes/Sistema de animacion.png>)
 
+![alt text](Imagenes/AnimacionIdle.gif)
+![alt text](Imagenes/Idle.png)
+
 Para dotar al personaje de una respuesta orgánica, implementamos una Máquina de Estados de Animación compleja que responde dinámicamente al contexto del gameplay. Un ejemplo clave es el sistema de salto, el cual hemos desglosado en un ciclo de cuatro fases para garantizar la fluidez física: Jump Start (anticipación), In-Air Loop (vuelo), Landing (aterrizaje) y una variante específica de Free Fall para caídas libres sin impulso previo.
 
-![alt text](Imagenes/AnimacionIdle.gif)
+![alt text](Imagenes/Saltar.gif)
+![alt text](<Imagenes/Inicio de Salto.png>)
+![alt text](Imagenes/Falling.png)
+![alt text](<Imagenes/Fallinh Caida Libre.png>)
 
 ![alt text](<Imagenes/Animacion Muerte.gif>)
+![alt text](Imagenes/Dead.png)
 
 En cuanto a la mecánica de recarga, diseñamos un set de animaciones específico para las zonas de oxígeno. La postura de absorción es un guiño estético a la Genki-dama de Dragon Ball, funcionando como un momento de vulnerabilidad y poder. Para evitar cortes abruptos en el flujo de juego, desarrollamos transiciones suavizadas (Blends) con dos condiciones de salida:
 
 ![alt text](<Imagenes/Animacion Oxigeno.png>)
+![alt text](Imagenes/Oxigeno.png)
 
 Salida Estática: Al alcanzar el 100% de la carga, el personaje realiza un blend hacia su postura de Idle base.
 
 Salida Dinámica: Si el jugador interrumpe la carga para moverse, el sistema ejecuta una transición directa hacia la animación de locución, manteniendo el ritmo de la partida.
+
+![alt text](Imagenes/Escalar.gif)
+![alt text](Imagenes/Escalar.png)
 
 Finalmente, incorporamos un estado de Climbing (Escalada) con detección de colisiones verticales, permitiendo al protagonista interactuar con las escaleras del nivel de forma precisa y funcional. Este ecosistema de animaciones asegura que el control del personaje se sienta responsivo y visualmente pulido.
