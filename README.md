@@ -71,6 +71,8 @@ En cuanto al stack tecnológico, el flujo de trabajo se centró en la integraci�
 
 Para lograr el acabado final, aprovechamos el potencial del compositor en el editor de nodos de Blender. Mediante este flujo de post-procesamiento, implementamos dos efectos críticos:
 
+![alt text](Imagenes/Compositer.png)
+
 #### Detección de bordes (Outline): Un trazado de contornos que define la silueta de los objetos, técnica que aplicaremos de forma sistémica en otros elementos del proyecto.
 
 #### Pixelado por Render: Un filtro de posterización y reducción de resolución que transforma la geometría 3D en el estilo pixelado característico que define nuestra identidad artística.
