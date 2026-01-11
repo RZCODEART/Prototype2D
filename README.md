@@ -76,3 +76,27 @@ Para lograr el acabado final, aprovechamos el potencial del compositor en el edi
 #### Pixelado por Render: Un filtro de posterización y reducción de resolución que transforma la geometría 3D en el estilo pixelado característico que define nuestra identidad artística.
 
 Este método nos permite mantener la flexibilidad del diseño 3D permitiendonos el control total sobre las luces y sombras mientras elaboramos una estética retro-moderna de alta fidelidad.
+
+![alt text](Imagenes/RocasComposicion_2.png)
+
+## Composición en Profundidad
+La construcción del escenario se fundamenta en un sistema de cuatro planos de profundidad (Parallax Layers), diseñados para maximizar la inmersión y la tridimensionalidad del entorno:
+
+Primer Plano (Foreground): Compuesto por rocas ornamentales que enmarcan la acción y refuerzan la sensación de cercanía.
+Plano de Acción (Midground): Donde se sitúa la geometría del suelo y las colisiones principales del nivel.
+Capa de Oclusión (Mask Layer): Actúa como un fondo máscara mediante el uso de Sprite Masks. Su función técnica es filtrar la visibilidad de la cuarta capa de manera selectiva.
+Plano de Fondo (Background): Esta capa final interactúa directamente con la máscara anterior, generando un efecto de contraluz y siluetas que solo se revela por sectores ademas que tiene un efecto de scrolling.
+
+Esta implementación no solo añade una profundidad atmosférica significativa, sino que utiliza el espacio negativo para sugerir la inmensidad de la caverna. Al restringir la visión del fondo mediante máscaras, logramos un juego de luces y sombras que guía la mirada del jugador hacia los puntos de interés mientras mantiene el misterio de lo que yace en la oscuridad.
+
+![alt text](Imagenes/Background.png)
+
+En la estructuración de la tercera capa, opté por un flujo de trabajo basado en instanciación de prefabs. Al convertir los sprites en objetos reutilizables, logramos poblar el nivel con una alta densidad visual sin comprometer el overhead de memoria, manteniendo un rendimiento óptimo en la carga de activos.
+
+![alt text](Imagenes/Mascaras.png)
+
+El desafío técnico real surgió en la cuarta capa. Al utilizar un Quad (un objeto de malla o mesh), nos encontramos con la incompatibilidad nativa entre los Sprite Masks y el Mesh Renderer. Para solucionar este conflicto de renderizado, desarrollé un Shader personalizado con acceso al Stencil Buffer. Este shader permite que el material del Quad interprete las instrucciones de la máscara, filtrando los píxeles de manera precisa y resolviendo la limitación técnica de forma eficiente.
+
+Finalmente, para dotar de dinamismo al fondo, implementé un script que vincula el movimiento del jugador con el Offset de la textura del material. Mediante esta técnica de manipulación de coordenadas UV en tiempo real, logramos un efecto de profundidad continua que reacciona a la posición del usuario, reforzando la escala del entorno subterráneo.
+
+![alt text](Imagenes/movimientoTextura.png)
