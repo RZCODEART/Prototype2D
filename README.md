@@ -18,14 +18,13 @@ En Survive 31.45.34.40, la experiencia se condensa en un espacio continuo y mono
 
 El Discurso Narrativo: El juego nos plantea una paradoja existencial: el protagonista debe sobrevivir un día más solo para continuar la búsqueda de algo que, posiblemente, sea un espejismo. Esta estructura de nivel único refuerza la sensación de una perseverancia absurda. Es el mito de Sísifo bajo tierra; el jugador no avanza hacia una meta clara, sino que se desplaza a través de una geografía del agotamiento, impulsado por la débil esperanza de encontrar una salida —o una respuesta— que tal vez nunca existió.
 
-## El Loop de Juego: Tensión Atmosférica
+### El Loop de Juego: Tensión Atmosférica
 
 La mecánica principal se aleja del combate para centrarse en un loop de supervivencia minimalista: la gestión de oxígeno. El diseño de niveles utiliza la iluminación no solo como guía visual (vending de luz), sino como una mecánica de regeneración vital. Los cilindros de oxígeno repartidos por el mapa actúan como checkpoints orgánicos; encontrarlos es la diferencia entre continuar la run o el game over. Este uso del storytelling ambiental (encontrar suministros en restos de otros jugadores/personajes) le da un peso narrativo muy fuerte sin necesidad de una sola línea de diálogo.
 
-## Estructura de Nivel Único: El Desafío de Resistencia
+### Estructura de Nivel Único: El Desafío de Resistencia
 El juego se presenta en un único nivel masivo, eliminando las transiciones de carga para potenciar la claustrofobia. Esta decisión de diseño es arriesgada pero efectiva:
 
-    Continuidad Absoluta: Al no haber cortes, el jugador siente el desgaste real del personaje.
-
-    Narrativa de lo Incierto: El objetivo principal se mantiene ambiguo. El juego te empuja a avanzar hacia "algo que tal vez no exista", transformando el juego en una experiencia de resistencia psicológica. Es un desafío de endurance donde la meta es el viaje mismo.
+### Narrativa de lo Incierto:
+El objetivo principal se mantiene ambiguo. El juego te empuja a avanzar hacia "algo que tal vez no exista", transformando el juego en una experiencia de resistencia psicológica. Es un desafío de endurance donde la meta es el viaje mismo.
 
