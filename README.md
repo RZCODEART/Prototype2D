@@ -200,6 +200,27 @@ Para garantizar la legibilidad visual en un entorno de baja luminancia, dotamos 
 
 En cuanto a la lógica de despliegue, hemos implementado un sistema de Object Polling combinado con un algoritmo de distribución aleatoria. En cada sesión de juego, el sistema selecciona de forma randomizada 5 nodos de spawn de los 8 posibles distribuidos en el mapa. Este enfoque cumple dos objetivos fundamentales:
 
+![alt text](<Imagenes/Posiciones OxigenCilinder.png>)
+
 Optimización: El polling evita la instanciación y destrucción constante de objetos, reduciendo picos de CPU.
 
 Rejugabilidad: Al variar la ubicación del oxígeno, obligamos al jugador a explorar y adaptar su ruta en cada partida, evitando la memorización del nivel.
+
+## Profundidad: El Sistema de Escaleras
+
+![alt text](<Imagenes/Escalera (1).png>)
+
+
+Para el diseño de las escaleras, optamos por un modelado tridimensional con una inclinación intencional de 15 grados. El objetivo técnico de esta rotación es romper la bidimensionalidad de la vista ortográfica, permitiendo que el objeto gane volumen y sea inmediatamente reconocible para el jugador como un elemento interactivo.
+
+![alt text](<Imagenes/Escalera (2).png>)
+
+Sin embargo, el aspecto más innovador es la gestión del Sorting Layer (Orden de Capas). Para lograr una integración realista entre el personaje y el prop, renderizamos los laterales de la escalera como elementos independientes. Mediante un sistema de triggers de proximidad, hemos implementado la siguiente lógica de renderizado:
+
+![alt text](Imagenes/Escalar.gif)
+
+Entrada en contacto: Al iniciar la mecánica de escalada, el motor desplaza al jugador a una capa intermedia situada entre el cuerpo de la escalera y el lateral frontal renderizado por separado.
+
+Efecto de Oclusión Parcial: Esta técnica crea la ilusión de que el personaje se desplaza por el interior de la estructura, y no simplemente "sobre" ella.
+
+Esta solución de ** layering dinámico** eleva la fidelidad visual de la interacción, eliminando la sensación de planos planos y otorgando una tridimensionalidad real a la relación entre el protagonista y el entorno arquitectónico de la caverna.
