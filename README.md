@@ -36,3 +36,9 @@ La arquitectura del mapa se ha proyectado en tres fases estructurales, cada una 
 Como principio fundamental en mi flujo de trabajo, opté por alejarme inicialmente de las herramientas de software para adoptar un enfoque artesanal. El plano original fue diseñado a mano, permitiéndome abstraer la complejidad del entorno y definir el flujo de movimiento, los puntos de tensión y la distribución de recursos de manera orgánica. Este prototipo analógico ha servido como la piedra angular para el diseño final del nivel, garantizando que la estructura laberíntica mantenga una coherencia espacial antes de ser trasladada al motor de juego.
 
 ![alt text](Imagenes/MapaAMano.jpg)
+
+### Prototipado Funcional: El Proceso de Blockout
+Tras la fase de diseño analógico, el siguiente paso crítico fue superar el "vacío del lienzo en blanco" mediante la implementación de un blockout. En esta etapa, estructuré el mapa utilizando bloques geométricos básicos que actúan como placeholders (marcadores de posición) para definir la disposición de los futuros prefabs y elementos visuales finales.
+
+Este entorno controlado fue vital para realizar el testeo de colisiones y la validación de las mecánicas principales del personaje. Durante esta iteración técnica, operamos con primitivas geométricas —cuadrados en 2D para el entorno y una cápsula para el protagonista—, permitiéndonos iterar sobre la jugabilidad pura y el feel del movimiento sin la distracción de los activos visuales. Este enfoque me aseguro que el diseño de niveles era sólido y funcional antes de pasar a la fase de producción artística.
+
