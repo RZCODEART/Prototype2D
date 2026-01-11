@@ -34,3 +34,5 @@ Para el punto de partida estético, se tomaron como referencia inicial las forma
 La arquitectura del mapa se ha proyectado en tres fases estructurales, cada una respondiendo a una etapa evolutiva distinta de la experiencia. En esta instancia, nos enfocaremos en la primera fase, la cual sienta las bases del ecosistema subterráneo que el jugador deberá recorrer.
 
 Como principio fundamental en mi flujo de trabajo, opté por alejarme inicialmente de las herramientas de software para adoptar un enfoque artesanal. El plano original fue diseñado a mano, permitiéndome abstraer la complejidad del entorno y definir el flujo de movimiento, los puntos de tensión y la distribución de recursos de manera orgánica. Este prototipo analógico ha servido como la piedra angular para el diseño final del nivel, garantizando que la estructura laberíntica mantenga una coherencia espacial antes de ser trasladada al motor de juego.
+
+![alt text](Imagenes/MapaAMano.jpg)
