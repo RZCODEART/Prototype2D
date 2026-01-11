@@ -42,3 +42,22 @@ Tras la fase de diseño analógico, el siguiente paso crítico fue superar el "v
 
 Este entorno controlado fue vital para realizar el testeo de colisiones y la validación de las mecánicas principales del personaje. Durante esta iteración técnica, operamos con primitivas geométricas —cuadrados en 2D para el entorno y una cápsula para el protagonista—, permitiéndonos iterar sobre la jugabilidad pura y el feel del movimiento sin la distracción de los activos visuales. Este enfoque me aseguro que el diseño de niveles era sólido y funcional antes de pasar a la fase de producción artística.
 
+![alt text](Imagenes/BlockOut.png)
+
+En la creación de los assets y sprites, la premisa estética fue la inmersión en una penumbra absoluta. El diseño visual busca una dualidad: proyectar la majestuosidad del entorno a través de planos de fondo profundos, mientras se mantiene la hostilidad del primer plano mediante la ausencia de luz.
+
+Para que esta atmósfera fuera técnica y visualmente coherente, establecí un esquema de iluminación cenital como eje de referencia para la generación de todas las imágenes. Esta decisión técnica no solo define el volumen de los objetos y las texturas de la caverna, sino que simula la incidencia real de los focos de luz exterior que perforan el subsuelo. Al unificar el sombreado de los sprites bajo esta fuente de luz superior, logramos una integración orgánica entre el personaje, los recursos y el escenario, reforzando la narrativa de que la luz es, literalmente, el único vínculo con el mundo de arriba.
+
+Para la estética utilizamos un texturizado de baja resolución, permite que el mapa de la caverna no se sienta como un plano estático, sino como un entorno vivo con profundidad de campo. Al tratar el arte bajo este enfoque, logramos que la interacción entre la luz cenital y las superficies genere sombras proyectadas que refuerzan la sensación de inmersión, elevando la identidad visual del proyecto por encima de los estándares del plataformas 2D convencional.
+
+Para la construcción del terreno, desarrollamos un set de ocho sprites base, 5 plataformas combinables, y cuatro estalactitas y que conforman nuestra paleta de texturas principal. Estos activos fueron integrados en el flujo de trabajo como prefabs, una decisión técnica orientada a una gestión eficiente de recursos de memoria y a facilitar la instanciación de objetos dentro del motor.
+
+El verdadero desafío del diseño modular en este entorno fue el control de la repetición (tiling). Para evitar un patrón visual monótono que rompiera la inmersión, generamos un amplio número de combinaciones y rotaciones que permiten configurar el espacio de forma orgánica. Sin embargo, la mayor complejidad técnica residió en el tratamiento del sombreado: cada pieza debía alinearse perfectamente con la lógica de iluminación global para que las sombras fueran coherentes entre los distintos módulos, ocultando las costuras de unión y manteniendo la atmósfera de la caverna intacta.
+
+En el apartado estético, la obra implementa una técnica de renderizado híbrido que se sitúa en el umbral entre el pixel art tradicional y la profundidad del 3D. El objetivo de este estilo es dotar al entorno de un acabado volumétrico, donde la textura conserva la esencia nostálgica del píxel, pero el comportamiento de los materiales y la perspectiva sugieren una tridimensionalidad tangible.
+
+![alt text](Imagenes/Rocks.png)
+
+![alt text](Imagenes/Rocks_2.png)
+
+![alt text](Imagenes/estalactitas.png)
