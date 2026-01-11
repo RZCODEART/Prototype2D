@@ -97,6 +97,27 @@ En la estructuración de la tercera capa, opté por un flujo de trabajo basado e
 
 El desafío técnico real surgió en la cuarta capa. Al utilizar un Quad (un objeto de malla o mesh), nos encontramos con la incompatibilidad nativa entre los Sprite Masks y el Mesh Renderer. Para solucionar este conflicto de renderizado, desarrollé un Shader personalizado con acceso al Stencil Buffer. Este shader permite que el material del Quad interprete las instrucciones de la máscara, filtrando los píxeles de manera precisa y resolviendo la limitación técnica de forma eficiente.
 
+![alt text](<Imagenes/fondo cuarta Capa.png>)
+
 Finalmente, para dotar de dinamismo al fondo, implementé un script que vincula el movimiento del jugador con el Offset de la textura del material. Mediante esta técnica de manipulación de coordenadas UV en tiempo real, logramos un efecto de profundidad continua que reacciona a la posición del usuario, reforzando la escala del entorno subterráneo.
 
 ![alt text](Imagenes/movimientoTextura.png)
+
+## Mecánica de Zonas de Oxígeno
+
+![alt text](<Imagenes/ZonaOxygeno (2).png>)
+
+Los puntos de flujo de oxígeno, definidos narrativamente como umbrales sensoriales, constituyen el pilar de recuperación del jugador. En esta primera etapa del proyecto, hemos implementado seis nodos de recarga, todos derivados de un Prefab maestro. Este sistema nos permite mantener una lógica global, aunque hemos aplicado overrides (modificaciones individuales) en casos específicos para adaptar la intensidad de la luz o el sonido según la topografía de la caverna.
+
+![alt text](<Imagenes/ZonaOxygeno (1).png>)
+
+Estructuralmente, el Prefab se compone de tres elementos críticos integrados:
+
+Feedback Visual: Un componente de 2D Light Sprite que señaliza el área de seguridad y refuerza la atmósfera cenital.
+
+Lógica de Trigger: Un objeto vacío con un Box Collider 2D configurado como disparador (Is Trigger), vinculado a un script de gestión de recursos. Este script permite parametrizar de forma exacta la tasa de recuperación de oxígeno por segundo.
+
+![alt text](<Imagenes/ZonaOxygeno (3).png>)
+![alt text](<Imagenes/ZonaOxygeno (4).png>)
+
+Inmersión Acústica: Un sistema de audio posicional que gestiona el sonido ambiental del exterior. Hemos implementado un control de Fade-in/Fade-out automatizado, que suaviza la transición sonora cuando el jugador entra o sale del radio de escucha, garantizando una transición orgánica entre el silencio del encierro y el eco de la vida en la superficie.
