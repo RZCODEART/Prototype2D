@@ -183,3 +183,23 @@ Salida Dinámica: Si el jugador interrumpe la carga para moverse, el sistema eje
 ![alt text](Imagenes/Escalar.png)
 
 Finalmente, incorporamos un estado de Climbing (Escalada) con detección de colisiones verticales, permitiendo al protagonista interactuar con las escaleras del nivel de forma precisa y funcional. Este ecosistema de animaciones asegura que el control del personaje se sienta responsivo y visualmente pulido.
+
+## Gestión de Assets y Sistemas de Spawning: El Cilindro de Oxígeno
+
+![alt text](<Imagenes/CilindroOxygeno (2).png>)
+
+El cilindro de oxigeno, como ítem crítico de supervivencia, ha sido diseñado siguiendo un pipeline de alta fidelidad. El modelado base y la exportación de sprites se realizaron en Blender, con un detallado de materiales posterior en Substance 3D para enfatizar el desgaste del metal y las texturas industriales. Una vez integrado en el ecosistema de Unity, el asset se configuró como un Prefab avanzado.
+
+![alt text](<Imagenes/CilindroOxygeno (3).png>)
+
+Para garantizar la legibilidad visual en un entorno de baja luminancia, dotamos al prefab de una Spotlight 2D dedicada. Este componente actúa como un faro guía, permitiendo que el jugador identifique el recurso incluso en las zonas de oscuridad más densa.
+
+![alt text](<Imagenes/CilindroOxygeno (1).png>)
+
+![alt text](Imagenes/CilindroOxygenoGame.png)
+
+En cuanto a la lógica de despliegue, hemos implementado un sistema de Object Polling combinado con un algoritmo de distribución aleatoria. En cada sesión de juego, el sistema selecciona de forma randomizada 5 nodos de spawn de los 8 posibles distribuidos en el mapa. Este enfoque cumple dos objetivos fundamentales:
+
+Optimización: El polling evita la instanciación y destrucción constante de objetos, reduciendo picos de CPU.
+
+Rejugabilidad: Al variar la ubicación del oxígeno, obligamos al jugador a explorar y adaptar su ruta en cada partida, evitando la memorización del nivel.
