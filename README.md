@@ -131,8 +131,6 @@ Para concluir la arquitectura de esta primera etapa, hemos diseñado el sector d
 
 Desde el punto de vista técnico, la zona está configurada mediante dos componentes clave:
 
-Lógica de Colisión (Death Trigger): Se implementó un Box Collider 2D configurado para detectar el contacto directo con el player. Al activarse, este dispara una función de derrota inmediata, forzando al jugador a respetar los límites del entorno.
-
-Iluminación Atmosférica: El área está jerarquizada visualmente mediante una Spotlight 2D. Este foco de luz no solo sirve como advertencia visual de peligro, sino que también aporta el dramatismo necesario para marcar el final de este tramo.
+Lógica de Colisión: Se implementó un Box Collider 2D configurado para detectar el contacto directo con el player. Al activarse, este dispara una función de derrota inmediata, forzando al jugador a respetar los límites del entorno. Iluminación Atmosférica: El área está jerarquizada visualmente mediante una Spotlight 2D. Este foco de luz no solo sirve como advertencia visual de peligro, sino que también aporta el dramatismo necesario para marcar el final de este tramo. 
 
 Aunque en esta etapa del proyecto el lago funciona como un límite infranqueable, su estructura modular permitiría, en futuras iteraciones, evolucionar hacia mecánicas más complejas de nado o gestión de oxígeno bajo el agua.
