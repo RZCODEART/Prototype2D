@@ -224,3 +224,20 @@ Entrada en contacto: Al iniciar la mecánica de escalada, el motor desplaza al j
 Efecto de Oclusión Parcial: Esta técnica crea la ilusión de que el personaje se desplaza por el interior de la estructura, y no simplemente "sobre" ella.
 
 Esta solución de ** layering dinámico** eleva la fidelidad visual de la interacción, eliminando la sensación de planos planos y otorgando una tridimensionalidad real a la relación entre el protagonista y el entorno arquitectónico de la caverna.
+
+## Cinemachine
+Para la gestión de la visualización, hemos implementado un sistema avanzado de Cinemachine que utiliza dos perfiles de cámara distintos, optimizando tanto la presentación del escenario como la jugabilidad activa:
+
+![alt text](<Imagenes/Cinemachine Configuracion (1).png>)
+
+Cámara de Introducción (Cinematic Path): Al iniciar la sesión, una Virtual Camera ejecuta un recorrido predefinido a través de un Spline Dolly. Este movimiento cinematográfico presenta el mapa al jugador, estableciendo el tono y la escala del entorno. Para la transición, desarrollamos un script que monitorea el progreso del recorrido; al alcanzar un valor de 0.99f en la unidad del spline, el sistema de prioridades de Cinemachine se activa, realizando un blend suave hacia la cámara principal.
+
+![alt text](<Imagenes/Cinemachine (2).gif>)
+
+Cámara de Seguimiento (Gameplay Camera): Una vez en control, el enfoque se traslada a una cámara configurada con un Dead Zone centralizado. Esta decisión técnica mantiene al protagonista en el eje del encuadre, proporcionando un campo de visión equilibrado de los obstáculos que se aproximan en todas las direcciones.
+
+![alt text](<Cinemachine (3).gif>)
+
+Sistema de Confinamiento: Para garantizar la integridad visual, hemos integrado un Cinemachine Confiner 2D. Utilizando un Composite Collider como límite, esta herramienta restringe el movimiento de la cámara, evitando el renderizado de áreas fuera del mapa (out of bounds) y manteniendo el enfoque exclusivamente en el espacio jugable diseñado.
+
+![alt text](<Imagenes/Cinemachine (1).gif>)
