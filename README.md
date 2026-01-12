@@ -225,6 +225,12 @@ Efecto de Oclusión Parcial: Esta técnica crea la ilusión de que el personaje 
 
 Esta solución de ** layering dinámico** eleva la fidelidad visual de la interacción, eliminando la sensación de planos planos y otorgando una tridimensionalidad real a la relación entre el protagonista y el entorno arquitectónico de la caverna.
 
+## Los Rastros del Fracaso
+
+![alt text](Imagenes/Caidos.png)
+
+A lo largo del recorrido, el jugador encontrará los restos de exploradores caídos, integrados de forma orgánica como parte del escenario inerte. Estos elementos no son solo decorativos; funcionan como indicadores visuales de peligro y refuerzan la narrativa de supervivencia, sugiriendo que muchos otros fallaron en su intento de escapar antes que el protagonista.
+
 ## Cinemachine
 Para la gestión de la visualización, hemos implementado un sistema avanzado de Cinemachine que utiliza dos perfiles de cámara distintos, optimizando tanto la presentación del escenario como la jugabilidad activa:
 
@@ -298,6 +304,9 @@ El sistema de interfaz se ha estructurado en dos bloques diferenciados, prioriza
 
 Interfaces de Navegación (Menus & HUD): Diseñamos las escenas de Start Screen y Game Over utilizando un flujo de trabajo que integra el modelado 3D en Blender con la composición y diagramación en Photoshop. La tipografía técnica para los botones de interacción (Start, Back to Title) fue importada y configurada mediante TextMeshPro en Unity para garantizar una legibilidad óptima en diferentes resoluciones.
 
+![alt text](<Imagenes/Escenas (1).png>)
+![alt text](<Imagenes/Escenas (2).png>)
+
 HUD In-Game (Medidor de Oxígeno): El elemento central de la interfaz es el indicador de oxígeno, cuyo diseño está inspirado en los manómetros de buceo reales. El flujo de producción incluyó:
 
 ![alt text](<Imagenes/modelado oxygen (1).png>)
@@ -313,3 +322,6 @@ Implementación Técnica: Para la funcionalidad, integramos un Slider nativo de 
 ![alt text](<Imagenes/relogOxygen (1).png>)
 ![alt text](<Imagenes/relogOxygen (2).png>)
 
+Con este desglose técnico, espero haber proporcionado una visión clara y exhaustiva del flujo de desarrollo detrás de Survie. Cada decisión, desde el pipeline de renderizado híbrido hasta el sistema de audio adaptativo, ha sido tomada con el objetivo de ofrecer una experiencia de supervivencia inmersiva y pulida.
+
+Estamos volcando todo nuestro esfuerzo en las fases finales de pulido y optimización. Agradecemos enormemente vuestro interés y esperamos que muy pronto podáis sumergiros en la experiencia completa de Survie. ¡Nos vemos en la caverna!
