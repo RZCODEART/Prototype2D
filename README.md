@@ -260,8 +260,56 @@ Este flujo de trabajo garantiza que el shake sea independiente de la jerarquía 
 
 El diseño sonoro se ha implementado mediante un sistema híbrido que prioriza la sincronía mecánica y la inmersión atmosférica, utilizando tres metodologías clave:
 
+![alt text](<Imagenes/Sonido (2).png>)
+<audio controls src="Sonido/Aterrizaje02.wav" title="Aterrizaje"></audio> <audio controls src="Sonido/Caminar_Madera.wav" title="Escalar"></audio> <audio controls src="Sonido/Caminar02.wav" title="Walking01"></audio> <audio controls src="Sonido/Caminar03.wav" title="Walking02"></audio> <audio controls src="Sonido/Caminar04.wav" title="Walking03"></audio> <audio controls src="Sonido/Salto02.wav" title="Salto"></audio>
+
 Sincronización por Animation Events: Para los efectos de sonido (SFX) vinculados a la locomoción (pasos, saltos y aterrizajes), utilizamos Animation Events. Este método permite disparar métodos específicos desde el script de movimiento en el frame exacto de la animación, garantizando una concordancia perfecta entre lo que el jugador ve y escucha.
+
+![alt text](<Imagenes/Sonido (3).png>)
+<audio controls src="Sonido/SonidoAmbiente.wav" title="SonidoAmbiente"></audio>
 
 Gestión de Ambientes y Estado de Supervivencia: Implementamos un Ambience Manager encargado de la banda sonora ambiental. Este sistema incluye una lógica de Audio Adaptativo: cuando el nivel de oxígeno desciende del 20%, el volumen del ambiente disminuye de forma correlativa. Esta técnica de "vaciado sonoro" intensifica la sensación de asfixia y peligro inminente, enfocando la atención del jugador en su estado crítico.
 
+![alt text](<Imagenes/Sonido (1).png>)
+<audio controls src="Sonido/ZoneOxygen.wav" title="ZOneOxygen"></audio>
+
 Audio Espacial y Triggering: Los elementos del entorno, como los cilindros y las zonas de oxígeno, gestionan su propio comportamiento sonoro. Las zonas de recarga utilizan un sistema de Audio Fading vinculado a los Triggers de luz. Al entrar o salir del área, el volumen realiza una transición suave (atenuación logarítmica), permitiendo que el sonido del "exterior" se integre de manera orgánica según la posición del protagonista.
+
+![alt text](Imagenes/Audition.png)
+
+Para la creación del ecosistema auditivo, se utilizó Adobe Audition como estación de trabajo de audio digital principal. El proceso se centró en el diseño por capas, combinando diversas fuentes sonoras para dotar a cada efecto de una mayor complejidad y riqueza armónica, evitando sonidos planos o genéricos.
+
+Un aspecto crítico de la producción fue el tratamiento de la reverberación y la respuesta de sala. Mediante la edición de los parámetros de decay y la intensidad de la reflexión, intentamos logramos simular las propiedades acústicas de una caverna profunda. Este post-procesamiento es para la narrativa ambiental, ya que proporciona al jugador una sensación constante de volumen y escala, situando cada sonido dentro de un espacio físico tangible y reforzando la atmósfera de aislamiento del proyecto.
+
+## Sonido del exterior
+
+Para la ambientación sonora del exterior, hemos implementado un sistema de Audio Spawning vinculado a los puntos de luz y oxígeno. En lugar de una pista global estática, el sonido se origina en coordenadas específicas del mapa, utilizando una arquitectura de Nodos de Emisión distribuidos estratégicamente.
+
+Técnicamente, el sistema funciona de la siguiente manera:
+
+Instanciación mediante Pooling: Utilizamos un Object Pool de fuentes de audio (AudioSources) que se activan en los nodos donde se encuentran los focos de luz. Esto optimiza el rendimiento al evitar la creación constante de objetos de audio en el motor.
+
+Lógica de Selección Aleatoria: En esta etapa inicial, el sistema selecciona nodos al azar para reproducir un clip ambiental único. No obstante, la arquitectura está diseñada para ser escalable: el objetivo final es implementar una librería de sonidos variados que se asignen de forma aleatoria tanto en ubicación como en contenido (Sound Randomizer).
+
+Este enfoque de Audio Procedimental garantiza que el paisaje sonoro nunca sea idéntico en dos partidas, rompiendo la predictibilidad y reforzando la sensación de que el mundo exterior es un entorno complejo y cambiante que se filtra a través de las grietas de la caverna.
+
+## Arquitectura de Interfaz (UI) y Diseño de Menús
+El sistema de interfaz se ha estructurado en dos bloques diferenciados, priorizando la coherencia estética y la claridad informativa:
+
+Interfaces de Navegación (Menus & HUD): Diseñamos las escenas de Start Screen y Game Over utilizando un flujo de trabajo que integra el modelado 3D en Blender con la composición y diagramación en Photoshop. La tipografía técnica para los botones de interacción (Start, Back to Title) fue importada y configurada mediante TextMeshPro en Unity para garantizar una legibilidad óptima en diferentes resoluciones.
+
+HUD In-Game (Medidor de Oxígeno): El elemento central de la interfaz es el indicador de oxígeno, cuyo diseño está inspirado en los manómetros de buceo reales. El flujo de producción incluyó:
+
+![alt text](<Imagenes/modelado oxygen (1).png>)
+![alt text](<Imagenes/modelado oxygen (2).png>)
+
+Modelado y Texturizado: El cuerpo del medidor se modeló en Blender y se procesó en Substance 3D para lograr un acabado industrial. Los detalles gráficos y las texturas de los diales se refinaron en Photoshop.
+
+![alt text](Imagenes/Relog0001.png) 
+![alt text](Imagenes/RelogOptimo.png)
+
+Implementación Técnica: Para la funcionalidad, integramos un Slider nativo de Unity posicionado mediante anchors estratégicos sobre el sprite del medidor. Esto permite que el llenado de la barra esté vinculado directamente a la variable de oxígeno del jugador, proporcionando una respuesta visual inmediata al consumo o recarga de recursos.
+
+![alt text](<Imagenes/relogOxygen (1).png>)
+![alt text](<Imagenes/relogOxygen (2).png>)
+
