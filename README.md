@@ -255,3 +255,13 @@ Emisor (Impulse Source): Configuré un componente CinemachineImpulseSource vincu
 Receptor (Impulse Listener): En la cámara de gameplay, añadimos una extensión CinemachineImpulseListener. Este componente actúa como un "oído" que detecta las señales emitidas en el espacio, traduciéndolas en movimientos de vibración procedimental en el encuadre.
 
 Este flujo de trabajo garantiza que el shake sea independiente de la jerarquía de objetos, logrando una respuesta visual mucho más limpia y orgánica que refuerza la contundencia del movimiento del personaje dentro de la caverna.
+
+## Arquitectura de Audio y Sonido Adaptativo
+
+El diseño sonoro se ha implementado mediante un sistema híbrido que prioriza la sincronía mecánica y la inmersión atmosférica, utilizando tres metodologías clave:
+
+Sincronización por Animation Events: Para los efectos de sonido (SFX) vinculados a la locomoción (pasos, saltos y aterrizajes), utilizamos Animation Events. Este método permite disparar métodos específicos desde el script de movimiento en el frame exacto de la animación, garantizando una concordancia perfecta entre lo que el jugador ve y escucha.
+
+Gestión de Ambientes y Estado de Supervivencia: Implementamos un Ambience Manager encargado de la banda sonora ambiental. Este sistema incluye una lógica de Audio Adaptativo: cuando el nivel de oxígeno desciende del 20%, el volumen del ambiente disminuye de forma correlativa. Esta técnica de "vaciado sonoro" intensifica la sensación de asfixia y peligro inminente, enfocando la atención del jugador en su estado crítico.
+
+Audio Espacial y Triggering: Los elementos del entorno, como los cilindros y las zonas de oxígeno, gestionan su propio comportamiento sonoro. Las zonas de recarga utilizan un sistema de Audio Fading vinculado a los Triggers de luz. Al entrar o salir del área, el volumen realiza una transición suave (atenuación logarítmica), permitiendo que el sonido del "exterior" se integre de manera orgánica según la posición del protagonista.
