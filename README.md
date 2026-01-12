@@ -325,3 +325,5 @@ Implementación Técnica: Para la funcionalidad, integramos un Slider nativo de 
 Con este desglose técnico, espero haber proporcionado una visión clara y exhaustiva del flujo de desarrollo detrás de Survie. Cada decisión, desde el pipeline de renderizado híbrido hasta el sistema de audio adaptativo, ha sido tomada con el objetivo de ofrecer una experiencia de supervivencia inmersiva y pulida.
 
 Estamos volcando todo nuestro esfuerzo en las fases finales de pulido y optimización. Agradecemos enormemente vuestro interés y esperamos que muy pronto podáis sumergiros en la experiencia completa de Survie. ¡Nos vemos en la caverna!
+
+[Video Analisis](https://youtu.be/RsxKNjQUu0U)
