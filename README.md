@@ -208,12 +208,12 @@ Rejugabilidad: Al variar la ubicación del oxígeno, obligamos al jugador a expl
 
 ## Profundidad: El Sistema de Escaleras
 
-![alt text](<Imagenes/Escalera (1).png>)
+![alt text](<Imagenes/Escalera (2).png>)
 
 
 Para el diseño de las escaleras, optamos por un modelado tridimensional con una inclinación intencional de 15 grados. El objetivo técnico de esta rotación es romper la bidimensionalidad de la vista ortográfica, permitiendo que el objeto gane volumen y sea inmediatamente reconocible para el jugador como un elemento interactivo.
 
-![alt text](<Imagenes/Escalera (2).png>)
+![alt text](<Imagenes/Escalera (1).png>)
 
 Sin embargo, el aspecto más innovador es la gestión del Sorting Layer (Orden de Capas). Para lograr una integración realista entre el personaje y el prop, renderizamos los laterales de la escalera como elementos independientes. Mediante un sistema de triggers de proximidad, hemos implementado la siguiente lógica de renderizado:
 
@@ -241,3 +241,17 @@ Cámara de Seguimiento (Gameplay Camera): Una vez en control, el enfoque se tras
 Sistema de Confinamiento: Para garantizar la integridad visual, hemos integrado un Cinemachine Confiner 2D. Utilizando un Composite Collider como límite, esta herramienta restringe el movimiento de la cámara, evitando el renderizado de áreas fuera del mapa (out of bounds) y manteniendo el enfoque exclusivamente en el espacio jugable diseñado.
 
 ![alt text](<Imagenes/Cinemachine (1).gif>)
+
+Para elevar el impacto de las interacciones físicas, integramos un sistema de Screen Shake basado en el módulo Cinemachine Impulse. Esta arquitectura nos permite generar vibraciones de cámara dinámicas sin interferir con el sistema de seguimiento principal del jugador.
+
+La solución técnica se divide en dos componentes comunicados por eventos:
+
+![alt text](<Imagenes/Cinemachine Configuracion (2).png>)
+
+Emisor (Impulse Source): Configuré un componente CinemachineImpulseSource vinculado al protagonista. A través del script de movimiento, el sistema dispara una señal de impulso en momentos críticos (como aterrizajes forzosos o colisiones), permitiéndonos parametrizar la intensidad, la duración y el patrón de la vibración (Raw Signal).
+
+![alt text](<Cinemachine Configuracion (3).png>)
+
+Receptor (Impulse Listener): En la cámara de gameplay, añadimos una extensión CinemachineImpulseListener. Este componente actúa como un "oído" que detecta las señales emitidas en el espacio, traduciéndolas en movimientos de vibración procedimental en el encuadre.
+
+Este flujo de trabajo garantiza que el shake sea independiente de la jerarquía de objetos, logrando una respuesta visual mucho más limpia y orgánica que refuerza la contundencia del movimiento del personaje dentro de la caverna.
