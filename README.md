@@ -326,4 +326,3 @@ Con este desglose técnico, espero haber proporcionado una visión clara y exhau
 
 Estamos volcando todo nuestro esfuerzo en las fases finales de pulido y optimización. Agradecemos enormemente vuestro interés y esperamos que muy pronto podáis sumergiros en la experiencia completa de Survie. ¡Nos vemos en la caverna!
 
-[Video Analisis](https://youtu.be/RsxKNjQUu0U)
